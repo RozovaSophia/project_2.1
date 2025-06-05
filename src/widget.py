@@ -10,10 +10,10 @@ def mask_account_card(value: str) -> str:
             new_list.append(the_first_part)
         else:
             if len(symbols) == 16:
-                formatted_number = get_mask_card_number(symbols)
+                formatted_number = masks.get_mask_card_number(symbols)
                 new_list.append(formatted_number)
             else:
-                formatted_number = get_mask_account(symbols)
+                formatted_number = masks.get_mask_account(symbols)
                 new_list.append(formatted_number)
         update_value = " ".join(new_list)
     return update_value
@@ -28,5 +28,5 @@ def get_date(date_time: str) -> str:
     return ".".join(times)
 
 if __name__ == "__main__":
-    result_2 = get_date(input("Enter: "))
+    result_2 = get_date(input("Enter date: "))
     print(result_2)
