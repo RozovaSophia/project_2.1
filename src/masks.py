@@ -1,11 +1,15 @@
 def get_mask_card_number(card_number: str) -> str:
     """функция, которая принимает номер карты, и возвращает ее маску"""
-    formatted_number = card_number[:4] + " " + card_number[6:8] + "** **** " + card_number[-4:]
-    return formatted_number
+    if card_number.isdigit() and len(card_number) == 16:
+        formatted_number = card_number[:4] + " " + card_number[4:6] + "** **** " + card_number[-4:]
+        return formatted_number
+    else:
+        return "Error: invalid number format"
 
 
-result = get_mask_card_number(input("Enter card number: "))
-print(result)
+
+# result = get_mask_card_number(input("Enter your number card")
+# print(result)
 
 
 def get_mask_account(account: str) -> str:
@@ -14,5 +18,5 @@ def get_mask_account(account: str) -> str:
     return mask_account
 
 
-result = get_mask_account(input("Enter account: "))
-print(result)
+# result = get_mask_account(input("Enter account: "))
+# print(result)
