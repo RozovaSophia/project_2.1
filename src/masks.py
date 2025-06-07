@@ -14,8 +14,11 @@ def get_mask_card_number(card_number: str) -> str:
 
 def get_mask_account(account: str) -> str:
     """функция, которая принимает номер счета, и возвращает его маску"""
-    mask_account = account.replace(account[0:16], "**")
-    return mask_account
+    if account.isdigit() and len(account) == 20:
+        mask_account = account.replace(account[0:16], "**")
+        return mask_account
+    else:
+        return "Error: invalid account format"
 
 
 # result = get_mask_account(input("Enter account: "))
