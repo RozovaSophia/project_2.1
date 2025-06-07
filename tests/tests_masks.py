@@ -1,7 +1,7 @@
 from src.masks import *
 
-def test_get_mask_card():
-    assert get_mask_card_number("1234567890123456") == "1234 56** **** 3456"
+def test_get_mask_card(fixture_for_mask):
+    assert get_mask_card_number(fixture_for_mask) == "1234 56** **** 3456"
 
 
 def test_for_atypical_numbers():
