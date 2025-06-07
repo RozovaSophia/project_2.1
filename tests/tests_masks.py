@@ -12,8 +12,8 @@ def test_for_an_empty_value():
     assert get_mask_card_number("") == "Error: invalid number format"
 
 
-def test_get_mask_account():
-    assert get_mask_account("12345678901234567890") == "**7890"
+def test_get_mask_account(fixture_for_mask):
+    assert get_mask_account(fixture_for_mask) == "**7890"
 
 
 def test_for_atypical_account():

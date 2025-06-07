@@ -24,13 +24,23 @@ def get_mask_card_number(card_number: typing.Any) -> str:
 # print(result)
 
 
-def get_mask_account(account: str) -> str:
+def get_mask_account(account: typing.Any) -> str:
     """функция, которая принимает номер счета, и возвращает его маску"""
-    if account.isdigit() and len(account) == 20:
-        mask_account = account.replace(account[0:16], "**")
-        return mask_account
+    if isinstance(account, str):
+        if account.isdigit() and len(account) == 20:
+            mask_account = account.replace(account[0:16], "**")
+            return mask_account
+        else:
+            return "Error: invalid account format"
     else:
-        return "Error: invalid account format"
+        # return "Please, enter your account number"
+        filter_list = []
+        for item in account:
+            if isinstance(item, str):
+                if item.isdigit() and len(item) == 20:
+                    mask_account = item.replace(item[0:16], "**")
+                    filter_list.append(mask_account)
+        return " ".join(filter_list)
 
 
 # result = get_mask_account(input("Enter account: "))
