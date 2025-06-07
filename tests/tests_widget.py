@@ -1,5 +1,6 @@
 import pytest
 from src.widget import mask_account_card
+from src.widget import get_date
 
 
 def test_mask_account_card():
@@ -15,3 +16,17 @@ def test_mask_account_card():
 ])
 def test_mask_ac_card_advanced(value, expected_result):
     assert mask_account_card(value) == expected_result
+
+def test_for_atypical_number():
+    assert mask_account_card("!@#$%^&*()") == "Error: invalid number or account format"
+    assert mask_account_card("") == "Error: invalid number or account format"
+
+
+def test_get_date():
+    assert get_date("2025-04-11T02:26:18.671407") == "11.04.2025"
+
+def test_for_atypical_date(fixture_for_date):
+    assert get_date(fixture_for_date) == "07.12.3034"
+
+def test_for_empty_date():
+    assert get_date("") == "Please, enter the date in the 'year-month-day' format"
