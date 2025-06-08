@@ -27,9 +27,9 @@ def mask_account_card(value: str) -> str:
 
 
 
-# if __name__ == "__main__":
-#     result_1 = mask_account_card(input("Enter account card: "))
-#     print(result_1)
+if __name__ == "__main__":
+     result_1 = mask_account_card(input("Enter account card: "))
+     print(result_1)
 
 def get_date(date: typing.Any) -> str: #
     """ принимаем дату """
@@ -57,6 +57,6 @@ def get_date(date: typing.Any) -> str: #
             return "Please, enter the date in the 'year-month-day' format"
 
 
-# if __name__ == "__main__":
-    # result_2 = get_date(input("Enter date: "))
-    # print(result_2)
+if __name__ == "__main__":
+     result_2 = get_date(input("Enter date: "))
+     print(result_2)

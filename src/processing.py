@@ -4,11 +4,15 @@ def filter_by_state(list_of_dict: list, state: str = "EXECUTED") -> list:
     for dict in list_of_dict:
         if dict.get("state") == state:
             filtered_list.append(dict)
-    return filtered_list
+    if not filtered_list:
+        return "No values were found for this key"
+    else:
+        return filtered_list
 
 
-result = filter_by_state(list_of_dict=eval(input("Enter the list of dictionaries: ")))
-print(result)
+if __name__ == "__main__":
+    result = filter_by_state(list_of_dict=eval(input("Enter the list of dictionaries: ")))
+    print(result)
 
 
 def sort_by_date(list_of_dict: list, descending: bool = True) -> list:
@@ -17,5 +21,6 @@ def sort_by_date(list_of_dict: list, descending: bool = True) -> list:
     return sorted_date
 
 
-result = sort_by_date(list_of_dict=eval(input("Enter the list of dictionaries: ")))
-print(result)
+if __name__ == "__main__":
+    result = sort_by_date(list_of_dict=eval(input("Enter the list of dictionaries: ")))
+    print(result)

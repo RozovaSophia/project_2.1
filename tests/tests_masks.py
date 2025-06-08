@@ -1,4 +1,5 @@
-from src.masks import *
+from src.masks import get_mask_card_number
+from src.masks import get_mask_account
 
 def test_get_mask_card(fixture_for_mask):
     assert get_mask_card_number(fixture_for_mask) == "1234 56** **** 3456"

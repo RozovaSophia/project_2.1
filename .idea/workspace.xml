@@ -6,9 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="c346c19c-102d-422d-8ac0-a75f26afaa18" name="Changes" comment="version with modifications from the teacher">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/masks.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/masks.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/processing.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/processing.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/widget.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/widget.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/conftest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/tests_widget.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/tests_widget.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/tests_masks.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/tests_masks.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/tests_processing.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/tests_processing.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,13 +61,20 @@
     "Python tests.Python tests for tests_masks.test_for_incorrect_num_len.executor": "Run",
     "Python tests.Python tests for tests_masks.test_get_mask_account.executor": "Run",
     "Python tests.Python tests for tests_masks.test_get_mask_card.executor": "Run",
+    "Python tests.Python tests for tests_processing.test_filter_by_state.executor": "Run",
+    "Python tests.Python tests for tests_processing.test_for_atypical_state.executor": "Debug",
     "Python tests.Python tests for tests_widget.test_for_atypical_date.executor": "Run",
     "Python tests.Python tests for tests_widget.test_for_atypical_number.executor": "Run",
+    "Python tests.Python tests for tests_widget.test_for_empty_date.executor": "Run",
     "Python tests.Python tests for tests_widget.test_get_data.executor": "Run",
     "Python tests.Python tests for tests_widget.test_get_date.executor": "Run",
     "Python tests.Python tests for tests_widget.test_mask_ac_card_advanced.executor": "Run",
-    "Python tests.Python tests for tests_widget.test_mask_account_card.executor": "Debug",
+    "Python tests.Python tests for tests_widget.test_mask_account_card.executor": "Run",
+    "Python tests.Python tests in tests_masks.py.executor": "Run",
+    "Python tests.Python tests in tests_processing.py.executor": "Run",
+    "Python tests.Python tests in tests_widget.py.executor": "Run",
     "Python tests.pytest in test.executor": "Run",
+    "Python.masks.executor": "Run",
     "Python.processing.executor": "Run",
     "Python.widget.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -85,8 +94,8 @@
       <recent name="C:\Users\Thunderobot\PycharmProjects\Project_2\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests for tests_widget.test_for_empty_date">
-    <configuration name="Python tests for tests_masks.test_for_an_empty_value" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python tests.Python tests for tests_processing.test_for_atypical_state">
+    <configuration name="Python tests for tests_processing.test_filter_by_state" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="Project_2" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -98,11 +107,11 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests_masks.test_for_an_empty_value&quot;" />
+      <option name="_new_target" value="&quot;tests_processing.test_filter_by_state&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for tests_masks.test_get_mask_account" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for tests_processing.test_for_atypical_state" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="Project_2" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -114,7 +123,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests_masks.test_get_mask_account&quot;" />
+      <option name="_new_target" value="&quot;tests_processing.test_for_atypical_state&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -134,22 +143,6 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for tests_widget.test_for_empty_date" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="Project_2" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests_widget.test_for_empty_date&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
     <configuration name="Python tests for tests_widget.test_get_date" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="Project_2" />
       <option name="ENV_FILES" value="" />
@@ -163,6 +156,22 @@
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;tests_widget.test_get_date&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for tests_widget.test_mask_ac_card_advanced" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="Project_2" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;tests_widget.test_mask_ac_card_advanced&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -187,19 +196,19 @@
     </configuration>
     <list>
       <item itemvalue="Python tests.pytest in test" />
-      <item itemvalue="Python tests.Python tests for tests_masks.test_for_an_empty_value" />
-      <item itemvalue="Python tests.Python tests for tests_masks.test_get_mask_account" />
+      <item itemvalue="Python tests.Python tests for tests_processing.test_filter_by_state" />
+      <item itemvalue="Python tests.Python tests for tests_processing.test_for_atypical_state" />
+      <item itemvalue="Python tests.Python tests for tests_widget.test_mask_ac_card_advanced" />
       <item itemvalue="Python tests.Python tests for tests_widget.test_for_atypical_date" />
-      <item itemvalue="Python tests.Python tests for tests_widget.test_for_empty_date" />
       <item itemvalue="Python tests.Python tests for tests_widget.test_get_date" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Python tests for tests_widget.test_for_empty_date" />
+        <item itemvalue="Python tests.Python tests for tests_processing.test_for_atypical_state" />
+        <item itemvalue="Python tests.Python tests for tests_widget.test_mask_ac_card_advanced" />
+        <item itemvalue="Python tests.Python tests for tests_processing.test_filter_by_state" />
         <item itemvalue="Python tests.Python tests for tests_widget.test_for_atypical_date" />
         <item itemvalue="Python tests.Python tests for tests_widget.test_get_date" />
-        <item itemvalue="Python tests.Python tests for tests_masks.test_get_mask_account" />
-        <item itemvalue="Python tests.Python tests for tests_masks.test_for_an_empty_value" />
       </list>
     </recent_temporary>
   </component>
@@ -230,7 +239,8 @@
       <workItem from="1749109390929" duration="520000" />
       <workItem from="1749109925885" duration="10543000" />
       <workItem from="1749149680123" duration="1030000" />
-      <workItem from="1749324603173" duration="2208000" />
+      <workItem from="1749324603173" duration="2529000" />
+      <workItem from="1749365378786" duration="2649000" />
     </task>
     <task id="LOCAL-00001" summary="finished completely with docstrings">
       <option name="closed" value="true" />
@@ -322,9 +332,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="version with modifications from the teacher" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Project_2$masks.coverage" NAME="masks Coverage Results" MODIFIED="1749365737784" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/Project_2$processing.coverage" NAME="processing Coverage Results" MODIFIED="1749120333904" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
-    <SUITE FILE_PATH="coverage/Project_2$.coverage" NAME=" Coverage Results" MODIFIED="1749326810719" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/Project_2$.coverage" NAME=" Coverage Results" MODIFIED="1749368023754" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/Project_2$widget.coverage" NAME="widget Coverage Results" MODIFIED="1749113748628" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
-    <SUITE FILE_PATH="coverage/Project_2$pytest_in_test.coverage" NAME="pytest in test Coverage Results" MODIFIED="1749315162770" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/Project_2$pytest_in_test.coverage" NAME="pytest in test Coverage Results" MODIFIED="1749365525344" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>

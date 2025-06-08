@@ -20,8 +20,9 @@ def get_mask_card_number(card_number: typing.Any) -> str:
         return " ".join(filter_list)
 
 
-# result = get_mask_card_number(input("Enter your number card")
-# print(result)
+if __name__ == "__main__":
+    result = get_mask_card_number(input("Enter your number card: "))
+    print(result)
 
 
 def get_mask_account(account: typing.Any) -> str:
@@ -42,6 +43,6 @@ def get_mask_account(account: typing.Any) -> str:
                     filter_list.append(mask_account)
         return " ".join(filter_list)
 
-
-# result = get_mask_account(input("Enter account: "))
-# print(result)
+if __name__ == "__main__":
+    result = get_mask_account(input("Enter account: "))
+    print(result)
