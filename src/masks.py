@@ -43,6 +43,7 @@ def get_mask_account(account: typing.Any) -> str:
                     filter_list.append(mask_account)
         return " ".join(filter_list)
 
+
 if __name__ == "__main__":
     result = get_mask_account(input("Enter account: "))
     print(result)

@@ -1,4 +1,7 @@
-def filter_by_state(list_of_dict: list, state: str = "EXECUTED") -> list:
+import typing
+
+
+def filter_by_state(list_of_dict: list, state: str = "EXECUTED") -> typing.Any:
     """функция принимает список словарей, фильтрует их и записывает отфильтрованные по ключу слова в новый список"""
     filtered_list = []
     for dict in list_of_dict:

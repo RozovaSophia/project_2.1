@@ -6,12 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="c346c19c-102d-422d-8ac0-a75f26afaa18" name="Changes" comment="version with modifications from the teacher">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poetry.lock" beforeDir="false" afterPath="$PROJECT_DIR$/poetry.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/tests_masks.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/tests_processing.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/tests_widget.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/masks.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/masks.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/processing.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/processing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/widget.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/widget.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/conftest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_masks.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_masks.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_processing.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_processing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_widget.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_widget.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -254,7 +255,7 @@
       <workItem from="1749109925885" duration="10543000" />
       <workItem from="1749149680123" duration="1030000" />
       <workItem from="1749324603173" duration="2529000" />
-      <workItem from="1749365378786" duration="5162000" />
+      <workItem from="1749365378786" duration="6587000" />
     </task>
     <task id="LOCAL-00001" summary="finished completely with docstrings">
       <option name="closed" value="true" />

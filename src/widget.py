@@ -1,7 +1,6 @@
 import typing
 
-from src.masks import get_mask_card_number
-from src.masks import get_mask_account
+from src.masks import get_mask_account, get_mask_card_number
 
 
 def mask_account_card(value: str) -> str:
@@ -26,13 +25,13 @@ def mask_account_card(value: str) -> str:
     return " ".join(new_list)
 
 
-
 if __name__ == "__main__":
-     result_1 = mask_account_card(input("Enter account card: "))
-     print(result_1)
+    result_1 = mask_account_card(input("Enter account card: "))
+    print(result_1)
 
-def get_date(date: typing.Any) -> str: #
-    """ принимаем дату """
+
+def get_date(date: typing.Any) -> typing.Any:  #
+    """принимаем дату"""
     if isinstance(date, str):
         if len(date) >= 10 and date[4] == "-" and date[7] == "-":
             if int(date[8:10]) <= 31 and int(date[5:7]) <= 12:
@@ -58,5 +57,5 @@ def get_date(date: typing.Any) -> str: #
 
 
 if __name__ == "__main__":
-     result_2 = get_date(input("Enter date: "))
-     print(result_2)
+    result_2 = get_date(input("Enter date: "))
+    print(result_2)
