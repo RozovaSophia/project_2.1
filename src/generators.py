@@ -81,6 +81,7 @@ transactions = (
 )
 
 def filter_by_currency(transactions: list, currency: str) -> typing.Any:
+    """функция, которая фильтрует транзакции в зависимости от валюты"""
     filter_dict = [x for x in transactions if x["operationAmount"]["currency"]["code"] == currency]
     yield from filter_dict
 
@@ -90,6 +91,7 @@ for _ in range(2):
 
 
 def transaction_descriptions(transactions: typing.List[dict]) -> str:
+    """функция, которая выводит описание каждой транзакции по ключу ["description"]"""
     description = [*(x["description"] for x in transactions)]
     yield from description
 
@@ -98,5 +100,17 @@ for _ in range(5):
     print(next(descriptions))
 
 
-def card_number_generator(start: int, end: int) -> str:
+def card_number_generator(start: int, end: int) -> typing.Any:
+    """функция, которая принимает начальное и конечное значение и
+    генерирует номер карты в формате XXXX XXXX XXXX XXXX"""
+    result = [str(x) for x in range(start, end+1)]
+    formatted_number = "{} {} {} {}"
+    new_number = [formatted_number.format(х[:4], х[4:8], х[8:12], х[12:16]) for х in [x.zfill(16) for x in result]]
+    yield from new_number
+
+for card_number in card_number_generator(1, 5):
+    print(card_number)
+
+
+
 
