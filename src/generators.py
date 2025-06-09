@@ -1,5 +1,4 @@
 import typing
-from colorsys import yiq_to_rgb
 
 transactions = [
     {
@@ -62,7 +61,7 @@ def filter_by_currency(transactions: list, currency: str) -> typing.Any:
 if __name__ == "__main__":
     usd_transactions = filter_by_currency(transactions, currency=input("Enter the currency: "))
     transactions_list = list(usd_transactions)
-    if transactions_list != ['There is no required currency in transactions']:
+    if transactions_list != ["There is no required currency in transactions"]:
         for item in transactions_list:
             print(item)
     else:
@@ -72,9 +71,11 @@ if __name__ == "__main__":
 def transaction_descriptions(transactions: typing.List[dict]) -> typing.Any:
     """функция, которая выводит описание каждой транзакции по ключу ["description"]"""
     acceptable_values = [
-        "Перевод организации", "Перевод со счета на счет",
-        "Перевод со счета на счет", "Перевод с карты на карту",
-        "Перевод организации"
+        "Перевод организации",
+        "Перевод со счета на счет",
+        "Перевод со счета на счет",
+        "Перевод с карты на карту",
+        "Перевод организации",
     ]
     try:
         filter_descriptions = [*(x["description"] for x in transactions if x["description"] in acceptable_values)]
@@ -82,14 +83,14 @@ def transaction_descriptions(transactions: typing.List[dict]) -> typing.Any:
             yield "No correct description of the transaction was found"
         else:
             yield from filter_descriptions
-    except:
+    except Exception:
         yield "Incorrect data entered"
 
 
 if __name__ == "__main__":
     descriptions = transaction_descriptions(transactions)
     descriptions_list = list(descriptions)
-    if descriptions_list != ['No correct description of the transaction was found'] or ["Incorrect data entered"]:
+    if descriptions_list != ["No correct description of the transaction was found"] or ["Incorrect data entered"]:
         for item in descriptions_list:
             print(item)
     else:
@@ -105,16 +106,17 @@ def card_number_generator(start: int, stop: int) -> typing.Any:
         else:
             result = [str(x) for x in range(start, stop + 1)]
             formatted_number = "{} {} {} {}"
-            new_number = [formatted_number.format(х[:4], х[4:8], х[8:12], х[12:16]) for х in [x.zfill(16) for x in result]]
+            new_number = [
+                formatted_number.format(х[:4], х[4:8], х[8:12], х[12:16]) for х in [x.zfill(16) for x in result]
+            ]
             yield from new_number
-    except:
-            yield "Incorrect data entered"
-
+    except Exception:
+        yield "Incorrect data entered"
 
 
 if __name__ == "__main__":
     try:
         for card_number in card_number_generator(1, 5):
             print(card_number)
-    except:
+    except TypeError:
         print("Please provide both start and stop arguments")
