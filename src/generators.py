@@ -52,13 +52,20 @@ transactions = [
 def filter_by_currency(transactions: list, currency: str) -> typing.Any:
     """функция, которая фильтрует транзакции в зависимости от валюты"""
     filter_dict = [x for x in transactions if x["operationAmount"]["currency"]["code"] == currency]
-    yield from filter_dict
+    if not filter_dict:
+        yield "There is no required currency in transactions"
+    else:
+        yield from filter_dict
 
 
 if __name__ == "__main__":
     usd_transactions = filter_by_currency(transactions, currency=input("Enter the currency: "))
-    for _ in range(2):
-        print(next(usd_transactions))
+    transactions_list = list(usd_transactions)
+    if transactions_list != ['There is no required currency in transactions']:
+        for item in transactions_list:
+            print(item)
+    else:
+        print(" ".join(list(transactions_list)))
 
 
 def transaction_descriptions(transactions: typing.List[dict]) -> typing.Any:
