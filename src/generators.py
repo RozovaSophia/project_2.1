@@ -70,14 +70,29 @@ if __name__ == "__main__":
 
 def transaction_descriptions(transactions: typing.List[dict]) -> typing.Any:
     """функция, которая выводит описание каждой транзакции по ключу ["description"]"""
-    description = [*(x["description"] for x in transactions)]
-    yield from description
+    acceptable_values = [
+        "Перевод организации", "Перевод со счета на счет",
+        "Перевод со счета на счет", "Перевод с карты на карту",
+        "Перевод организации"
+    ]
+    if isinstance(transactions, list):
+        filter_descriptions = [*(x["description"] for x in transactions if x["description"] in acceptable_values)]
+        if not filter_descriptions:
+            yield "No correct description of the transaction was found"
+        else:
+            yield from filter_descriptions
+    else:
+        yield "Incorrect data entered"
 
 
 if __name__ == "__main__":
     descriptions = transaction_descriptions(transactions)
-    for _ in range(5):
-        print(next(descriptions))
+    descriptions_list = list(descriptions)
+    if descriptions_list != ['No correct description of the transaction was found'] or ["Incorrect data entered"]:
+        for item in descriptions_list:
+            print(item)
+    else:
+        print(" ".join(list(descriptions_list)))
 
 
 def card_number_generator(start: int, end: int) -> typing.Any:

@@ -9,3 +9,4 @@ def fixture_for_mask() -> list:
 @pytest.fixture
 def fixture_for_date() -> list:
     return ["3034-12-07", "!@#$", "Тысяча сто пятый год, 31 июля", "9889-34-67", "12.07.2025"]
+

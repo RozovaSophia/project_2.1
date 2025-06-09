@@ -1,4 +1,9 @@
 [
+  "tests/test_generators.py::test_filter_by_currency",
+  "tests/test_generators.py::test_filter_by_empty_currency",
+  "tests/test_generators.py::test_filter_by_non_currency",
+  "tests/test_generators.py::test_transaction_atypical_descriptions",
+  "tests/test_generators.py::test_transaction_descriptions",
   "tests/test_masks.py::test_for_an_empty_value",
   "tests/test_masks.py::test_for_atypical_account",
   "tests/test_masks.py::test_for_atypical_numbers",
