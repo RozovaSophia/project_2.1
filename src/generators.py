@@ -1,4 +1,5 @@
 import typing
+from colorsys import yiq_to_rgb
 
 transactions = [
     {
@@ -75,13 +76,13 @@ def transaction_descriptions(transactions: typing.List[dict]) -> typing.Any:
         "Перевод со счета на счет", "Перевод с карты на карту",
         "Перевод организации"
     ]
-    if isinstance(transactions, list):
+    try:
         filter_descriptions = [*(x["description"] for x in transactions if x["description"] in acceptable_values)]
         if not filter_descriptions:
             yield "No correct description of the transaction was found"
         else:
             yield from filter_descriptions
-    else:
+    except:
         yield "Incorrect data entered"
 
 
@@ -95,15 +96,25 @@ if __name__ == "__main__":
         print(" ".join(list(descriptions_list)))
 
 
-def card_number_generator(start: int, end: int) -> typing.Any:
+def card_number_generator(start: int, stop: int) -> typing.Any:
     """функция, которая принимает начальное и конечное значение и
     генерирует номер карты в формате XXXX XXXX XXXX XXXX"""
-    result = [str(x) for x in range(start, end + 1)]
-    formatted_number = "{} {} {} {}"
-    new_number = [formatted_number.format(х[:4], х[4:8], х[8:12], х[12:16]) for х in [x.zfill(16) for x in result]]
-    yield from new_number
+    try:
+        if start > stop or start < 0:
+            yield "Incorrect data entered"
+        else:
+            result = [str(x) for x in range(start, stop + 1)]
+            formatted_number = "{} {} {} {}"
+            new_number = [formatted_number.format(х[:4], х[4:8], х[8:12], х[12:16]) for х in [x.zfill(16) for x in result]]
+            yield from new_number
+    except:
+            yield "Incorrect data entered"
+
 
 
 if __name__ == "__main__":
-    for card_number in card_number_generator(1, 5):
-        print(card_number)
+    try:
+        for card_number in card_number_generator(1, 5):
+            print(card_number)
+    except:
+        print("Please provide both start and stop arguments")

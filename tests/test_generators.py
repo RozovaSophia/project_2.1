@@ -1,5 +1,7 @@
+import pytest
 from src.generators import filter_by_currency, transactions
 from src.generators import transaction_descriptions
+from src.generators import card_number_generator
 
 transactions = [
     {
@@ -143,3 +145,27 @@ def test_transaction_atypical_descriptions():
             ]))) ==
             "No correct description of the transaction was found")
     assert (" ".join(list(transaction_descriptions("No value"))) == "Incorrect data entered")
+    assert (" ".join(list(transaction_descriptions([]))) == "No correct description of the transaction was found")
+
+
+def test_transaction_random_descriptions(fixture_for_descriptions):
+    assert (" ".join(list(transaction_descriptions("No value"))) == "Incorrect data entered")
+
+
+@pytest.mark.parametrize("start, stop, expected_result",
+                         [
+                             (0, 1, ["0000 0000 0000 0000", "0000 0000 0000 0001"]),
+                             (34, 35, ["0000 0000 0000 0034", "0000 0000 0000 0035"]),
+                             (1345, 1346, ["0000 0000 0000 1345", "0000 0000 0000 1346"]),
+                             (2345678, 2345679, ["0000 0000 0234 5678", "0000 0000 0234 5679"]),
+                             (99999999999998, 99999999999999, ["0099 9999 9999 9998", "0099 9999 9999 9999"]),
+                             (9999999999999998, 9999999999999999, ["9999 9999 9999 9998", "9999 9999 9999 9999"]),
+                         ])
+
+
+def test_card_number_generator(start: int, stop: int, expected_result: list) -> None:
+    assert list(card_number_generator(start, stop)) == expected_result
+
+def test_atypical_card_number_generator():
+    assert (" ".join(list(card_number_generator(-1, -8)))) == "Incorrect data entered"
+    assert (" ".join(list(card_number_generator("no", "value")))) == "Incorrect data entered"

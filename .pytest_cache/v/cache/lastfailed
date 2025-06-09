@@ -1,5 +1,4 @@
 {
   "tests/tests_widget.py::test_mask_ac_card_advanced[\\u041c\\u0418\\u0420 12345678901234567-\\u041c\\u0418\\u0420 1234 56** **** 4567]": true,
-  "tests/tests_widget.py::test_mask_ac_card_advanced[Mastercard 09345678901234532-Mastercard 0934 56** **** 4532]": true,
-  "tests/test_generators.py": true
+  "tests/tests_widget.py::test_mask_ac_card_advanced[Mastercard 09345678901234532-Mastercard 0934 56** **** 4532]": true
 }
