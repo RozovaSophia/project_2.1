@@ -1,6 +1,3 @@
-import time
-
-
 def log(filename=None):
     def actual_log(function):
         def wrapper(*args, **kwargs):
@@ -27,3 +24,8 @@ def my_function(x, y):
     return x + y
 
 my_function(1, 2)
+
+
+@log()
+def new_func(x, y):
+    return x - y

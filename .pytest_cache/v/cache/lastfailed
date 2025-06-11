@@ -7,5 +7,6 @@
   "tests/test_generators.py::test_filter_by_currency[transactions3-EUR-There is no EUR currency in transactions]": true,
   "tests/test_generators.py::test_filter_by_currency[transactions4-GBP-There is no GBP currency in transactions]": true,
   "tests/test_generators.py::test_card_number_generator[0--1-Incorrect data entered: start must be less than or equal to stop and non-negative]": true,
-  "tests/test_generators.py::test_card_number_generator[start7-None-Incorrect data entered: start and stop must be integers]": true
+  "tests/test_generators.py::test_card_number_generator[start7-None-Incorrect data entered: start and stop must be integers]": true,
+  "tests/test_decorators.py::test_decorator_with_an_error": true
 }
