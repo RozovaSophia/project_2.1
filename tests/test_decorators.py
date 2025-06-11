@@ -1,6 +1,6 @@
 import pytest
-from src.decorators import my_function
-from src.decorators import new_func
+
+from src.decorators import my_function, new_func
 
 
 def test_decorator(capsys):
@@ -9,16 +9,6 @@ def test_decorator(capsys):
     assert captured.out == ""
 
 
-@pytest.mark.parametrize( "arg_1, arg_2, expected",
-    [
-        (1, 2, -1),
-        (79, 60, 19),
-        ("None", "None", None),
-        ({}, [], None)
-
-    ]
-)
-
-
+@pytest.mark.parametrize("arg_1, arg_2, expected", [(1, 2, -1), (79, 60, 19), ("None", "None", None), ({}, [], None)])
 def test_for_console_output(arg_1, arg_2, expected):
     assert new_func(arg_1, arg_2) == expected
