@@ -1,18 +1,29 @@
-from datetime import time
-import logging
+import time
 
-with open("filename.txt", encoding="UTF-8" "w") as file:
-    contents = file.read()
-    def log(filename):
-        def actual_log(function):
-            def wrapper(*args, **kwargs):
-                time_1 = time.time()
+
+def log(filename=None):
+    def actual_log(function):
+        def wrapper(*args, **kwargs):
+            try:
                 result = function(*args, **kwargs)
-                time_2 = time.time()
                 if filename:
-                    file_handler = logging.basicConfig(filename, level=logging.INFO, encoding='utf-8', mode='a')
+                    with open(filename, 'a', encoding='utf-8') as f:
+                        f.write(f"{function.__name__} ok\n")
                 else:
-                    print(f"Function {function.__name__} took {time_2 - time_1} seconds")
+                    print(f"{function.__name__} ok")
                 return result
-            return wrapper
-        return actual_log
+            except Exception as e:
+                if filename:
+                    with open(filename, 'a', encoding='utf-8') as f:
+                        f.write(f"{function.__name__} error: {str(e)}. Inputs: {args}, {kwargs}\n")
+                else:
+                    print(f"{function.__name__} error: {str(e)}. Inputs: {args}, {kwargs}")
+        return wrapper
+    return actual_log
+
+
+@log(filename="mylog.txt")
+def my_function(x, y):
+    return x + y
+
+my_function(1, 2)
