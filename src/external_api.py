@@ -17,9 +17,14 @@ def return_amount(data):
                 from_ = transaction['operationAmount']['currency']['code']
                 amount = transaction['operationAmount']['amount']
                 response = requests.get(f"https://api.apilayer.com/exchangerates_data/convert?to=RUB&from={from_}&amount={amount}", headers=headers)
-                yield response.json()
+                result = response.json()
+                converted_amount = result['result']
+                yield converted_amount
+            else:
+                yield transaction['operationAmount']['amount']
 
 if __name__ == '__main__':
     result = return_amount(data=get_fin_transactions())
     print(next(result))
+
 
