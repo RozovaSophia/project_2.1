@@ -9,6 +9,7 @@
   "tests/test_decorators.py::test_for_console_output[79-60-19]",
   "tests/test_decorators.py::test_for_console_output[None-None-None]",
   "tests/test_decorators.py::test_for_console_output[arg_13-arg_23-None]",
+  "tests/test_external_api.py::TestExternalAPI::test_external_api",
   "tests/test_generators.py::test_atypical_card_number_generator",
   "tests/test_generators.py::test_card_number_generator",
   "tests/test_generators.py::test_card_number_generator[0--1-Incorrect data entered: start must be less than or equal to stop and non-negative]",

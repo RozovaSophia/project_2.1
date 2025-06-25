@@ -5,8 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c346c19c-102d-422d-8ac0-a75f26afaa18" name="Changes" comment="version with modifications from the teacher">
+      <change beforePath="$PROJECT_DIR$/.coverage" beforeDir="false" afterPath="$PROJECT_DIR$/.coverage" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_07_06_2025_18_33_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_07_06_2025_18_33__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/external_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/external_api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_external_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_external_api.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,125 +52,80 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python tests.Python tests for decorators.test_function.executor": "Run",
-    "Python tests.Python tests for decorators.testing_function.executor": "Run",
-    "Python tests.Python tests for decorators.tests_function.executor": "Run",
-    "Python tests.Python tests for test_decorators.test_decorator.executor": "Run",
-    "Python tests.Python tests for test_decorators.test_decorator_with_an_error.executor": "Run",
-    "Python tests.Python tests for test_decorators.test_for_console_output.executor": "Run",
-    "Python tests.Python tests for test_generators.test_atypical_card_number_generator.executor": "Run",
-    "Python tests.Python tests for test_generators.test_card_number_generator.executor": "Run",
-    "Python tests.Python tests for test_generators.test_filter_by_atypical_currency.executor": "Run",
-    "Python tests.Python tests for test_generators.test_filter_by_currency.executor": "Run",
-    "Python tests.Python tests for test_generators.test_filter_by_currency_with_correct_data.executor": "Run",
-    "Python tests.Python tests for test_generators.test_filter_by_empty_currency.executor": "Run",
-    "Python tests.Python tests for test_generators.test_filter_by_non_currency.executor": "Run",
-    "Python tests.Python tests for test_generators.test_transaction_atypical_descriptions.executor": "Run",
-    "Python tests.Python tests for test_generators.test_transaction_descriptions.executor": "Run",
-    "Python tests.Python tests for test_generators.test_transaction_random_descriptions.executor": "Run",
-    "Python tests.Python tests for tests_masks.test_for_an_empty_value.executor": "Run",
-    "Python tests.Python tests for tests_masks.test_for_atypical_account.executor": "Run",
-    "Python tests.Python tests for tests_masks.test_for_atypical_numbers.executor": "Run",
-    "Python tests.Python tests for tests_masks.test_for_incorrect_num_len.executor": "Run",
-    "Python tests.Python tests for tests_masks.test_get_mask_account.executor": "Run",
-    "Python tests.Python tests for tests_masks.test_get_mask_card.executor": "Run",
-    "Python tests.Python tests for tests_processing.test_filter_by_state.executor": "Run",
-    "Python tests.Python tests for tests_processing.test_for_atypical_dates.executor": "Run",
-    "Python tests.Python tests for tests_processing.test_for_atypical_state.executor": "Run",
-    "Python tests.Python tests for tests_processing.test_for_identical_dates.executor": "Run",
-    "Python tests.Python tests for tests_processing.test_sort_by_date.executor": "Run",
-    "Python tests.Python tests for tests_widget.test_for_atypical_date.executor": "Run",
-    "Python tests.Python tests for tests_widget.test_for_atypical_number.executor": "Run",
-    "Python tests.Python tests for tests_widget.test_for_empty_date.executor": "Run",
-    "Python tests.Python tests for tests_widget.test_get_data.executor": "Run",
-    "Python tests.Python tests for tests_widget.test_get_date.executor": "Run",
-    "Python tests.Python tests for tests_widget.test_mask_ac_card_advanced.executor": "Run",
-    "Python tests.Python tests for tests_widget.test_mask_account_card.executor": "Run",
-    "Python tests.Python tests in test_generators.py.executor": "Run",
-    "Python tests.Python tests in test_masks.py.executor": "Run",
-    "Python tests.Python tests in test_processing.py.executor": "Run",
-    "Python tests.Python tests in test_widget.py.executor": "Run",
-    "Python tests.Python tests in tests_masks.py.executor": "Run",
-    "Python tests.Python tests in tests_processing.py.executor": "Run",
-    "Python tests.Python tests in tests_widget.py.executor": "Run",
-    "Python tests.pytest in test.executor": "Run",
-    "Python.__init__.executor": "Run",
-    "Python.decorators.executor": "Run",
-    "Python.external_api.executor": "Run",
-    "Python.generators.executor": "Run",
-    "Python.masks.executor": "Run",
-    "Python.processing.executor": "Run",
-    "Python.tests.executor": "Run",
-    "Python.widget.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "feature/homework__12__1",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python tests.Python tests for decorators.test_function.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for decorators.testing_function.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for decorators.tests_function.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_decorators.test_decorator.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_decorators.test_decorator_with_an_error.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_decorators.test_for_console_output.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_external_api.TestExternalAPI.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_external_api.TestExternalAPI.test_external_api.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_generators.test_atypical_card_number_generator.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_generators.test_card_number_generator.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_generators.test_filter_by_atypical_currency.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_generators.test_filter_by_currency.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_generators.test_filter_by_currency_with_correct_data.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_generators.test_filter_by_empty_currency.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_generators.test_filter_by_non_currency.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_generators.test_transaction_atypical_descriptions.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_generators.test_transaction_descriptions.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_generators.test_transaction_random_descriptions.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests_masks.test_for_an_empty_value.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests_masks.test_for_atypical_account.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests_masks.test_for_atypical_numbers.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests_masks.test_for_incorrect_num_len.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests_masks.test_get_mask_account.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests_masks.test_get_mask_card.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests_processing.test_filter_by_state.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests_processing.test_for_atypical_dates.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests_processing.test_for_atypical_state.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests_processing.test_for_identical_dates.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests_processing.test_sort_by_date.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests_widget.test_for_atypical_date.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests_widget.test_for_atypical_number.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests_widget.test_for_empty_date.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests_widget.test_get_data.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests_widget.test_get_date.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests_widget.test_mask_ac_card_advanced.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests_widget.test_mask_account_card.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_external_api.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_generators.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_masks.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_processing.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_widget.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in tests_masks.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in tests_processing.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in tests_widget.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest in test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.__init__.executor&quot;: &quot;Run&quot;,
+    &quot;Python.decorators.executor&quot;: &quot;Run&quot;,
+    &quot;Python.external_api.executor&quot;: &quot;Run&quot;,
+    &quot;Python.generators.executor&quot;: &quot;Run&quot;,
+    &quot;Python.masks.executor&quot;: &quot;Run&quot;,
+    &quot;Python.processing.executor&quot;: &quot;Run&quot;,
+    &quot;Python.tests.executor&quot;: &quot;Run&quot;,
+    &quot;Python.widget.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/homework__12__1&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Thunderobot\PycharmProjects\Project_2\src" />
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="Python tests for decorators.test_function" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="Project_2" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;decorators.test_function&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Python tests for decorators.testing_function" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="Project_2" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;decorators.testing_function&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Python tests for decorators.tests_function" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="Project_2" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;decorators.tests_function&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
     <configuration name="Python tests for test_decorators.test_decorator_with_an_error" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="Project_2" />
       <option name="ENV_FILES" value="" />
@@ -199,6 +158,52 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
+    <configuration name="Python tests for test_external_api.TestExternalAPI" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="Project_2" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_external_api.TestExternalAPI&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_external_api.TestExternalAPI.test_external_api" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="Project_2" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_external_api.TestExternalAPI.test_external_api&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_external_api.test_external_api" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="Project_2" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_external_api.test_external_api&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
     <configuration name="pytest in test" type="tests" factoryName="py.test">
       <module name="Project_2" />
       <option name="ENV_FILES" value="" />
@@ -220,26 +225,25 @@
     </configuration>
     <list>
       <item itemvalue="Python tests.pytest in test" />
-      <item itemvalue="Python tests.Python tests for decorators.test_function" />
-      <item itemvalue="Python tests.Python tests for decorators.testing_function" />
-      <item itemvalue="Python tests.Python tests for decorators.tests_function" />
+      <item itemvalue="Python tests.Python tests for test_external_api.TestExternalAPI" />
+      <item itemvalue="Python tests.Python tests for test_external_api.TestExternalAPI.test_external_api" />
       <item itemvalue="Python tests.Python tests for test_decorators.test_decorator_with_an_error" />
       <item itemvalue="Python tests.Python tests for test_decorators.test_for_console_output" />
+      <item itemvalue="Python tests.Python tests for test_external_api.test_external_api" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Python tests for test_external_api.TestExternalAPI.test_external_api" />
+        <item itemvalue="Python tests.Python tests for test_external_api.TestExternalAPI" />
+        <item itemvalue="Python tests.Python tests for test_external_api.test_external_api" />
         <item itemvalue="Python tests.Python tests for test_decorators.test_for_console_output" />
         <item itemvalue="Python tests.Python tests for test_decorators.test_decorator_with_an_error" />
-        <item itemvalue="Python tests.Python tests for decorators.tests_function" />
-        <item itemvalue="Python tests.Python tests for decorators.testing_function" />
-        <item itemvalue="Python tests.Python tests for decorators.test_function" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-6a121458b545-JavaScript-PY-251.25410.159" />
         <option value="bundled-python-sdk-e0ed3721d81e-36ea0e71a18c-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-251.25410.159" />
       </set>
     </attachedChunks>
@@ -275,6 +279,7 @@
       <workItem from="1749548891541" duration="5094000" />
       <workItem from="1749557790628" duration="3203000" />
       <workItem from="1749660365326" duration="400000" />
+      <workItem from="1750678037159" duration="10000" />
     </task>
     <task id="LOCAL-00001" summary="finished completely with docstrings">
       <option name="closed" value="true" />
@@ -367,7 +372,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Project_2$decorators.coverage" NAME="decorators Coverage Results" MODIFIED="1749670301257" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
-    <SUITE FILE_PATH="coverage/Project_2$external_api.coverage" NAME="external_api Coverage Results" MODIFIED="1750583685935" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/Project_2$external_api.coverage" NAME="external_api Coverage Results" MODIFIED="1750584391263" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/Project_2$generators.coverage" NAME="generators Coverage Results" MODIFIED="1749558793480" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/Project_2$utils.coverage" NAME="utils Coverage Results" MODIFIED="1750492022798" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/Project_2$masks.coverage" NAME="masks Coverage Results" MODIFIED="1749365737784" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
