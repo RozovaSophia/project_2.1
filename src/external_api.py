@@ -1,32 +1,36 @@
 import os
-import time
-import random
-from dotenv import load_dotenv
+
 import requests
+from dotenv import load_dotenv
+
 from src.utils import get_fin_transactions
 
 load_dotenv()
 
-api_key = os.getenv('API_KEY')
+api_key = os.getenv("API_KEY")
 
-headers= {
-    "apikey": f"{api_key}"
-}
+headers = {"apikey": f"{api_key}"}
+
 
 def return_amount(data):
+    """Принимает файл с данными о транзакциях и выводит сумму в рублях, если валюта не равна RUB, то конвертирует ее
+    через сторонний сервис"""
     max_retries = 5
     for attempt in range(max_retries):
         try:
-            result_transactions =[]
+            result_transactions = []
             for transaction in data:
-                if transaction['operationAmount']['currency']['code'] != "RUB":
-                    from_ = transaction['operationAmount']['currency']['code']
-                    amount = transaction['operationAmount']['amount']
-                    response = requests.get(f"https://api.apilayer.com/exchangerates_data/convert?to=RUB&from={from_}&amount={amount}", headers=headers)
+                if transaction["operationAmount"]["currency"]["code"] != "RUB":
+                    from_ = transaction["operationAmount"]["currency"]["code"]
+                    amount = transaction["operationAmount"]["amount"]
+                    response = requests.get(
+                        f"https://api.apilayer.com/exchangerates_data/convert?to=RUB&from={from_}&amount={amount}",
+                        headers=headers,
+                    )
                     if response.status_code == 200:
                         result = response.json()
-                        if 'result' in result:
-                            converted_amount = result['result']
+                        if "result" in result:
+                            converted_amount = result["result"]
                             result_transactions.append(float(converted_amount))
                         else:
                             print("Ошибка: Ключ 'result' отсутствует в ответе API.")
@@ -34,7 +38,7 @@ def return_amount(data):
                     else:
                         print(f"Ошибка API: Код состояния {response.status_code}, Ответ: {response.text}")
                 else:
-                    result_transactions.append(float(transaction['operationAmount']['amount']))
+                    result_transactions.append(float(transaction["operationAmount"]["amount"]))
             return float(" ".join(map(str, result_transactions)))
         except requests.exceptions.RequestException as e:
             print(f"Ошибка подключения: {e}")
@@ -43,14 +47,13 @@ def return_amount(data):
             print(f"Ошибка парсинга JSON: {e}")
             return None
         except KeyError as e:
-             print(f"Ошибка ключа в JSON: {e}")
-             return None
+            print(f"Ошибка ключа в JSON: {e}")
+            return None
 
     print(f"Не удалось получить данные после {max_retries} попыток.")
     return None
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     result = return_amount(data=get_fin_transactions())
     print(result)
-
-

@@ -1,6 +1,8 @@
 import json
 
+
 def get_fin_transactions():
+    """Считывает файл json в папке data и выводит содержимое"""
     try:
         with open(r"..\data\operations.json", "r", encoding="utf-8") as f:  # Откройте файл для чтения
             data = json.load(f)  # Загрузите JSON из файла
@@ -12,6 +14,7 @@ def get_fin_transactions():
     except json.JSONDecodeError as e:
         return f"Ошибка декодирования JSON: {e}"
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     result = get_fin_transactions()
     print(result)
