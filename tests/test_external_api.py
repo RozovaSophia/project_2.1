@@ -27,6 +27,6 @@ class TestExternalAPI(unittest.TestCase):
         ]
         mock_get_fin_transactions.return_value = mock_data
 
-        # Вызов функции, которую мы тестируем
+
         result = return_amount(data=mock_get_fin_transactions())
         self.assertAlmostEqual(result, 200, places=2)

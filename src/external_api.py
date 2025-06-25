@@ -35,7 +35,7 @@ def return_amount(data):
                         print(f"Ошибка API: Код состояния {response.status_code}, Ответ: {response.text}")
                 else:
                     result_transactions.append(float(transaction['operationAmount']['amount']))
-            return " ".join(map(str, result_transactions))
+            return float(" ".join(map(str, result_transactions)))
         except requests.exceptions.RequestException as e:
             print(f"Ошибка подключения: {e}")
             return None
