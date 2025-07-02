@@ -1,13 +1,13 @@
 import logging
-import typing
 import os
+import typing
 
 app_logger = logging.getLogger(__name__)
 current_dir = os.path.dirname(os.path.abspath(__file__))
 project_root = os.path.dirname(current_dir)
-log_file_path = os.path.join(project_root, 'logs', 'example.log')
-file_handler = logging.FileHandler(log_file_path, mode='w', encoding='utf-8')
-file_formatter = logging.Formatter('%(asctime)s %(filename)s %(levelname)s: %(message)s')
+log_file_path = os.path.join(project_root, "logs", "example.log")
+file_handler = logging.FileHandler(log_file_path, mode="w", encoding="utf-8")
+file_formatter = logging.Formatter("%(asctime)s %(filename)s %(levelname)s: %(message)s")
 file_handler.setFormatter(file_formatter)
 app_logger.addHandler(file_handler)
 app_logger.setLevel(logging.DEBUG)
@@ -16,6 +16,7 @@ app_logger.info("Подключение к базе данных установ�
 app_logger.warning("Используется устаревшая функция get_data()")
 app_logger.error("Ошибка при обработке файла")
 app_logger.critical("Повреждение данных обнаружено! Завершение работы...")
+
 
 def get_mask_card_number(card_number: typing.Any) -> str:
     """функция, которая принимает номер карты, и возвращает ее маску"""
