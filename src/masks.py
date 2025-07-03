@@ -13,6 +13,7 @@ app_logger.setLevel(logging.DEBUG)
 
 app_logger.info("Программа запущена")
 
+
 def get_mask_card_number(card_number: str) -> str:
     """функция, которая принимает номер карты, и возвращает ее маску"""
     try:
@@ -57,4 +58,3 @@ def get_mask_account(account: str) -> str:
 if __name__ == "__main__":
     result = get_mask_account(input("Enter account: "))
     print(result)
-
