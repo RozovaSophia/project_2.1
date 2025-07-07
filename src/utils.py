@@ -19,10 +19,10 @@ app_logger.setLevel(logging.DEBUG)
 app_logger.info("Программа запущена")
 
 
-def get_fin_transactions():
+def get_fin_transactions(file_path="../data/operations.json"):
     """Считывает файл json в папке data и выводит содержимое"""
     try:
-        with open(r"../data/operations.json", "r", encoding="utf-8") as f:  # Откройте файл для чтения
+        with open(file_path, "r", encoding="utf-8") as f:  # Откройте файл для чтения
             data = json.load(f)  # Загрузите JSON из файла
             if not data:
                 app_logger.warning("В данном файле отсутствуют данные")
