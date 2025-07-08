@@ -7,9 +7,13 @@
     <list default="true" id="c346c19c-102d-422d-8ac0-a75f26afaa18" name="Changes" comment="version with modifications from the teacher">
       <change beforePath="$PROJECT_DIR$/.coverage" beforeDir="false" afterPath="$PROJECT_DIR$/.coverage" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/htmlcov/class_index.html" beforeDir="false" afterPath="$PROJECT_DIR$/htmlcov/class_index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/htmlcov/function_index.html" beforeDir="false" afterPath="$PROJECT_DIR$/htmlcov/function_index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/htmlcov/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/htmlcov/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/htmlcov/status.json" beforeDir="false" afterPath="$PROJECT_DIR$/htmlcov/status.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/htmlcov/z_145eef247bfb46b6_masks_py.html" beforeDir="false" afterPath="$PROJECT_DIR$/htmlcov/z_145eef247bfb46b6_masks_py.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/example.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/example.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poetry.lock" beforeDir="false" afterPath="$PROJECT_DIR$/poetry.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/external_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/external_api.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -229,12 +233,12 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Python tests.pytest in test" />
       <item itemvalue="Python tests.Python tests for test_decorators.test_decorator_with_an_error" />
       <item itemvalue="Python tests.Python tests for test_decorators.test_for_console_output" />
       <item itemvalue="Python tests.Python tests for test_external_api.TestExternalAPI" />
       <item itemvalue="Python tests.Python tests for test_external_api.TestExternalAPI.test_external_api" />
       <item itemvalue="Python tests.Python tests for test_external_api.test_external_api" />
-      <item itemvalue="Python tests.pytest in test" />
     </list>
     <recent_temporary>
       <list>
