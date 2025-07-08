@@ -26,13 +26,11 @@ class TestExternalAPI(unittest.TestCase):
                 mock_response.json.return_value = {"result": 1.0}  # 1 RUB = 1 RUB (ожидаемо)
                 return mock_response
             else:
-                mock_response.status_code = 400 # Неизвестный запрос
+                mock_response.status_code = 400  # Неизвестный запрос
                 mock_response.text = "Unknown currency"
                 return mock_response
 
-
         mock_get.side_effect = side_effect
-
 
         transactions = mock_get_fin_transactions()
         # Вызываем return_amount для каждой транзакции и проверяем результат
@@ -42,7 +40,5 @@ class TestExternalAPI(unittest.TestCase):
         usd_result = return_amount(usd_transaction)
         rub_result = return_amount(rub_transaction)
 
-
         self.assertAlmostEqual(usd_result, 7500.0, places=2)  # Проверяем конвертацию USD
         self.assertAlmostEqual(rub_result, "200", places=2)
-
