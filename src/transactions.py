@@ -6,9 +6,8 @@ import pandas as pd
 def reads_financial_transactions(file_path):
     """считывает файл csv, выводит в виде списка словарей"""
     with open(file_path, "r", encoding="UTF-8") as file:
-        reader = csv.DictReader(file)
-        transactions = list(reader)
-        return transactions
+        reader = csv.DictReader(file, delimiter=";")
+        return list(reader)
 
 
 def reads_financial_transactions_excel(file_path):
@@ -16,7 +15,6 @@ def reads_financial_transactions_excel(file_path):
     excel_data = pd.read_excel(file_path, parse_dates=["date"])
     transactions = excel_data.to_dict(orient="records")
     return transactions
-
 
 
 if __name__ == "__main__":
