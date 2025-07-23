@@ -13,7 +13,7 @@ api_key = os.getenv("API_KEY")
 headers = {"apikey": f"{api_key}"}
 
 
-def return_transaction(transactions):
+def return_amount(transactions):
     converted_transactions = []
     for transaction in transactions:
         if transaction:
@@ -34,5 +34,5 @@ def return_transaction(transactions):
 
 if __name__ == "__main__":
     transactions = get_fin_transactions()
-    result = return_transaction(transactions)
+    result = return_amount(transactions)
     print(result)

@@ -1,10 +1,10 @@
-import datetime
-
+from pandas import Timestamp
 from filtering_transactions import process_bank_search
-from src.masks import get_mask_card_number
 from src.processing import filter_by_state, sort_by_date
 from src.transactions import reads_financial_transactions, reads_financial_transactions_excel
 from src.utils import get_fin_transactions
+from src.widget import get_date
+from src.widget import mask_account_card
 
 
 def main(data: list[dict]):
@@ -64,11 +64,9 @@ def main(data: list[dict]):
             user_choice = input().lower()
             if user_choice == "по возрастанию":
                 filtered_data = sort_by_date(filtered_data, descending=False)
-                # print([i["date"] for i in filtered_data])
                 break
             elif user_choice == "по убыванию":
                 filtered_data = sort_by_date(filtered_data, descending=True)
-                print(filtered_data)
                 break
             else:
                 print("Повторите попытку.")
@@ -76,25 +74,6 @@ def main(data: list[dict]):
             break
         else:
             print("Повторите попытку.")
-
-    # {
-    #     "id": 441945886,
-    #     "state": "EXECUTED",
-    #     "date": "2019-08-26T10:50:58.294041",
-    #     "operationAmount": {
-    #         "amount": "31957.58",
-    #         "currency": {
-    #             "name": "руб.",
-    #             "code": "RUB"
-    #         }
-
-    # {'id': '3235160', 'state': 'EXECUTED', 'date': '2023-11-12T16:17:52Z', 'amount': '34316', 'currency_name': 'Euro',
-    #  'currency_code': 'EUR', 'from': 'Visa 2336865385909932', 'to': 'American Express 2266395591845773',
-    #  'description': 'Перевод с карты на карту'}
-
-    # {'id': 3235160.0, 'state': 'EXECUTED', 'date': Timestamp('2023-11-12 16:17:52+0000', tz='UTC'), 'amount': 34316.0,
-    #  'currency_name': 'Euro', 'currency_code': 'EUR', 'from': 'Visa 2336865385909932',
-    #  'to': 'American Express 2266395591845773', 'description': 'Перевод с карты на карту'}
 
     while True:
         print("Выводить только рублевые транзакции? Да/Нет")
@@ -112,39 +91,94 @@ def main(data: list[dict]):
         else:
             print("Повторите попытку.")
 
-#     while True:
-#         print("Отфильтровать список транзакций по определенному слову в описании?")
-#         user_choice = input().capitalize()
-#         if user_choice == "Да":
-#             filtered_data = process_bank_search(filtered_data, search=input("Введите слово: "))
-#             break
-#         elif user_choice == "Нет":
-#             break
-#         else:
-#             print("Повторите попытку.")
-#
-#         def
-#
+    while True:
+        print("Отфильтровать список транзакций по определенному слову в описании?")
+        user_choice = input().capitalize()
+        if user_choice == "Да":
+            filtered_data = process_bank_search(filtered_data, search=input("Введите слово: "))
+            break
+        elif user_choice == "Нет":
+            break
+        else:
+            print("Повторите попытку.")
+
+    for transaction in filtered_data:
+        final_transactions = []
+        date = get_date(transaction.get('date', {}))
+
+        if date == "Please, enter the date in the 'year-month-day' format":
+            timestamp = transaction.get('date', {})
+            formatted_date = timestamp.strftime('%Y-%m-%d')
+            date = get_date(formatted_date)
+
+        final_transactions.append(date)
+        description = transaction.get('description', {})
+        final_transactions.append(description)
+
+        if description == 'Открытие вклада':
+            account = mask_account_card(transaction.get('to', {}))
+            final_transactions.append(account)
+
+        else:
+            card_1 = mask_account_card(transaction.get('from', {}))
+            card_2 = mask_account_card(transaction.get('to', {}))
+            operation = card_1 + " -> " + card_2
+            final_transactions.append(operation)
+
+        # {
+        #     "id": 441945886,
+        #     "state": "EXECUTED",
+        #     "date": "2019-08-26T10:50:58.294041",
+        #     "operationAmount": {
+        #         "amount": "31957.58",
+        #         "currency": {
+        #             "name": "руб.",
+        #             "code": "RUB"
+        #         }
+        #     },
+        #     "description": "Перевод организации",
+        #     "from": "Maestro 1596837868705199",
+        #     "to": "Счет 64686473678894779589"
+        # }
+
+        # {'id': '3235160', 'state': 'EXECUTED', 'date': '2023-11-12T16:17:52Z', 'amount': '34316', 'currency_name': 'Euro',
+        #  'currency_code': 'EUR', 'from': 'Visa 2336865385909932', 'to': 'American Express 2266395591845773',
+        #  'description': 'Перевод с карты на карту'}
+
+        # {'id': 3235160.0, 'state': 'EXECUTED', 'date': Timestamp('2023-11-12 16:17:52+0000', tz='UTC'), 'amount': 34316.0,
+        #  'currency_name': 'Euro', 'currency_code': 'EUR', 'from': 'Visa 2336865385909932',
+        #  'to': 'American Express 2266395591845773', 'description': 'Перевод с карты на карту'}
+
+        if transaction.get('operationAmount', 0) != 0:
+            currency = transaction.get('operationAmount', {}).get('currency', {}).get('name', {})
+            sum = "Сумма: " + str(transaction.get('operationAmount', {}).get('amount', {})) + " " + currency
+            final_transactions.append(sum)
+        else:
+            currency = transaction.get('currency_name')
+            sum = "Сумма: " + str(transaction.get('amount', {})) + " " + currency
+            final_transactions.append(sum)
+        print("\n" + "\n".join(final_transactions))
+
 #     print(f"""
 #     Распечатываю итоговый список транзакций...
 #     Всего банковских операций в выборке: {len(filtered_data)}
-# #
-# # 08.12.2019 Открытие вклада
-# # Счет **4321
-# # Сумма: 40542 руб.
-# #
-# # 12.11.2019 Перевод с карты на карту
-# # MasterCard 7771 27** **** 3727 -> Visa Platinum 1293 38** **** 9203
-# # Сумма: 130 USD
-# #
-# # 18.07.2018 Перевод организации
-# # Visa Platinum 7492 65** **** 7202 -> Счет **0034
-# # Сумма: 8390 руб.
-# #
-# # 03.06.2018 Перевод со счета на счет
-# # Счет **2935 -> Счет **4321
-# # Сумма: 8200 EUR
-# #     """)
+#
+# 08.12.2019 Открытие вклада
+# Счет **4321
+# Сумма: 40542 руб.
+#
+# 12.11.2019 Перевод с карты на карту
+# MasterCard 7771 27** **** 3727 -> Visa Platinum 1293 38** **** 9203
+# Сумма: 130 USD
+#
+# 18.07.2018 Перевод организации
+# Visa Platinum 7492 65** **** 7202 -> Счет **0034
+# Сумма: 8390 руб.
+#
+# 03.06.2018 Перевод со счета на счет
+# Счет **2935 -> Счет **4321
+# Сумма: 8200 EUR
+#     """)
 
 
 if __name__ == "__main__":
