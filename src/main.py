@@ -1,7 +1,6 @@
 import datetime
 
 from filtering_transactions import process_bank_search
-from src.external_api import return_amount
 from src.masks import get_mask_card_number
 from src.processing import filter_by_state, sort_by_date
 from src.transactions import reads_financial_transactions, reads_financial_transactions_excel
@@ -69,6 +68,7 @@ def main(data: list[dict]):
                 break
             elif user_choice == "по убыванию":
                 filtered_data = sort_by_date(filtered_data, descending=True)
+                print(filtered_data)
                 break
             else:
                 print("Повторите попытку.")
@@ -77,22 +77,41 @@ def main(data: list[dict]):
         else:
             print("Повторите попытку.")
 
+    # {
+    #     "id": 441945886,
+    #     "state": "EXECUTED",
+    #     "date": "2019-08-26T10:50:58.294041",
+    #     "operationAmount": {
+    #         "amount": "31957.58",
+    #         "currency": {
+    #             "name": "руб.",
+    #             "code": "RUB"
+    #         }
 
-#     while True:
-#         print("Выводить только рублевые транзакции? Да/Нет")
-#         user_choice = input().capitalize()
-#         filtered_by_amount = []
-#         if user_choice == "Да":
-#             for transaction in filtered_data:
-#                 result = return_amount(transaction)
-#                 filtered_by_amount.append(result)
-#             print(filtered_by_amount)
-#             break
-#         elif user_choice == "Нет":
-#             break
-#         else:
-#             print("Повторите попытку.")
-#
+    # {'id': '3235160', 'state': 'EXECUTED', 'date': '2023-11-12T16:17:52Z', 'amount': '34316', 'currency_name': 'Euro',
+    #  'currency_code': 'EUR', 'from': 'Visa 2336865385909932', 'to': 'American Express 2266395591845773',
+    #  'description': 'Перевод с карты на карту'}
+
+    # {'id': 3235160.0, 'state': 'EXECUTED', 'date': Timestamp('2023-11-12 16:17:52+0000', tz='UTC'), 'amount': 34316.0,
+    #  'currency_name': 'Euro', 'currency_code': 'EUR', 'from': 'Visa 2336865385909932',
+    #  'to': 'American Express 2266395591845773', 'description': 'Перевод с карты на карту'}
+
+    while True:
+        print("Выводить только рублевые транзакции? Да/Нет")
+        user_choice = input().capitalize()
+        filtered_by_currency = []
+        if user_choice == "Да":
+            for transaction in filtered_data:
+                currency = transaction.get('operationAmount', {}).get('currency', {}).get('code', {})
+                if currency == 'RUB' or transaction.get('currency_code', {}) == 'RUB':
+                    filtered_by_currency.append(transaction)
+            filtered_data = filtered_by_currency
+            break
+        elif user_choice == "Нет":
+            break
+        else:
+            print("Повторите попытку.")
+
 #     while True:
 #         print("Отфильтровать список транзакций по определенному слову в описании?")
 #         user_choice = input().capitalize()
