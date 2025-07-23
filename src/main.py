@@ -1,10 +1,10 @@
 from pandas import Timestamp
+
 from filtering_transactions import process_bank_search
 from src.processing import filter_by_state, sort_by_date
 from src.transactions import reads_financial_transactions, reads_financial_transactions_excel
 from src.utils import get_fin_transactions
-from src.widget import get_date
-from src.widget import mask_account_card
+from src.widget import get_date, mask_account_card
 
 
 def main(data: list[dict]):
@@ -81,8 +81,8 @@ def main(data: list[dict]):
         filtered_by_currency = []
         if user_choice == "Да":
             for transaction in filtered_data:
-                currency = transaction.get('operationAmount', {}).get('currency', {}).get('code', {})
-                if currency == 'RUB' or transaction.get('currency_code', {}) == 'RUB':
+                currency = transaction.get("operationAmount", {}).get("currency", {}).get("code", {})
+                if currency == "RUB" or transaction.get("currency_code", {}) == "RUB":
                     filtered_by_currency.append(transaction)
             filtered_data = filtered_by_currency
             break
@@ -104,24 +104,24 @@ def main(data: list[dict]):
 
     for transaction in filtered_data:
         final_transactions = []
-        date = get_date(transaction.get('date', {}))
+        date = get_date(transaction.get("date", {}))
 
         if date == "Please, enter the date in the 'year-month-day' format":
-            timestamp = transaction.get('date', {})
-            formatted_date = timestamp.strftime('%Y-%m-%d')
+            timestamp = transaction.get("date", {})
+            formatted_date = timestamp.strftime("%Y-%m-%d")
             date = get_date(formatted_date)
 
         final_transactions.append(date)
-        description = transaction.get('description', {})
+        description = transaction.get("description", {})
         final_transactions.append(description)
 
-        if description == 'Открытие вклада':
-            account = mask_account_card(transaction.get('to', {}))
+        if description == "Открытие вклада":
+            account = mask_account_card(transaction.get("to", {}))
             final_transactions.append(account)
 
         else:
-            card_1 = mask_account_card(transaction.get('from', {}))
-            card_2 = mask_account_card(transaction.get('to', {}))
+            card_1 = mask_account_card(transaction.get("from", {}))
+            card_2 = mask_account_card(transaction.get("to", {}))
             operation = card_1 + " -> " + card_2
             final_transactions.append(operation)
 
@@ -149,15 +149,16 @@ def main(data: list[dict]):
         #  'currency_name': 'Euro', 'currency_code': 'EUR', 'from': 'Visa 2336865385909932',
         #  'to': 'American Express 2266395591845773', 'description': 'Перевод с карты на карту'}
 
-        if transaction.get('operationAmount', 0) != 0:
-            currency = transaction.get('operationAmount', {}).get('currency', {}).get('name', {})
-            sum = "Сумма: " + str(transaction.get('operationAmount', {}).get('amount', {})) + " " + currency
+        if transaction.get("operationAmount", 0) != 0:
+            currency = transaction.get("operationAmount", {}).get("currency", {}).get("name", {})
+            sum = "Сумма: " + str(transaction.get("operationAmount", {}).get("amount", {})) + " " + currency
             final_transactions.append(sum)
         else:
-            currency = transaction.get('currency_name')
-            sum = "Сумма: " + str(transaction.get('amount', {})) + " " + currency
+            currency = transaction.get("currency_name")
+            sum = "Сумма: " + str(transaction.get("amount", {})) + " " + currency
             final_transactions.append(sum)
         print("\n" + "\n".join(final_transactions))
+
 
 #     print(f"""
 #     Распечатываю итоговый список транзакций...
